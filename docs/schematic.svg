@@ -1,0 +1,217 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="690" viewBox="0 0 1100 690" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <rect width="1100" height="690" fill="#ffffff"/>
+  <defs>
+    <g id="gnd" stroke="#222" stroke-width="2">
+      <line x1="0" y1="0" x2="0" y2="10"/>
+      <line x1="-10" y1="10" x2="10" y2="10"/>
+      <line x1="-6" y1="15" x2="6" y2="15"/>
+      <line x1="-2" y1="20" x2="2" y2="20"/>
+    </g>
+    <g id="vcc">
+      <line x1="0" y1="0" x2="0" y2="-12" stroke="#222" stroke-width="2"/>
+      <line x1="-10" y1="-12" x2="10" y2="-12" stroke="#222" stroke-width="2"/>
+      <text x="0" y="-18" text-anchor="middle" font-size="12" fill="#b3261e" font-weight="bold">3V3</text>
+    </g>
+  </defs>
+
+  <g fill="none" stroke="#222" stroke-width="2">
+    <!-- ESP32-S3 -->
+    <rect x="60" y="80" width="220" height="560" rx="6" fill="#f4f6fa"/>
+    <!-- microSD -->
+    <rect x="440" y="90" width="160" height="135" rx="6" fill="#f4f6fa"/>
+    <!-- MAX98357A -->
+    <rect x="440" y="280" width="160" height="160" rx="6" fill="#f4f6fa"/>
+    <!-- W48 -->
+    <rect x="900" y="280" width="180" height="350" rx="6" fill="#faf6f0"/>
+
+    <!-- ESP -> microSD -->
+    <line x1="280" y1="110" x2="440" y2="110"/>
+    <line x1="280" y1="140" x2="440" y2="140"/>
+    <line x1="280" y1="170" x2="440" y2="170"/>
+    <line x1="280" y1="200" x2="440" y2="200"/>
+    <!-- ESP -> amp -->
+    <line x1="280" y1="300" x2="440" y2="300"/>
+    <line x1="280" y1="330" x2="440" y2="330"/>
+    <line x1="280" y1="360" x2="440" y2="360"/>
+    <line x1="280" y1="390" x2="440" y2="390"/>
+    <!-- amp GAIN: not connected -->
+    <line x1="440" y1="420" x2="425" y2="420"/>
+    <line x1="419" y1="414" x2="431" y2="426"/>
+    <line x1="419" y1="426" x2="431" y2="414"/>
+    <!-- ESP -> phone -->
+    <line x1="280" y1="510" x2="900" y2="510"/>
+    <line x1="280" y1="570" x2="900" y2="570"/>
+
+    <!-- amp + -> RV1 -> F -->
+    <line x1="600" y1="320" x2="680" y2="320"/>
+    <rect x="680" y="313" width="50" height="14" fill="#fff"/>
+    <line x1="730" y1="320" x2="900" y2="320"/>
+    <!-- amp - -> F' -->
+    <line x1="600" y1="390" x2="900" y2="390"/>
+
+    <!-- R1 pull-up on the dial line -->
+    <line x1="780" y1="450" x2="780" y2="460"/>
+    <rect x="773" y="460" width="14" height="36" fill="#fff"/>
+    <line x1="780" y1="496" x2="780" y2="510"/>
+
+    <!-- C1 across 3V3 / GND -->
+    <line x1="660" y1="110" x2="660" y2="140"/>
+    <line x1="648" y1="140" x2="672" y2="140"/>
+    <path d="M648 152 Q660 144 672 152"/>
+    <line x1="660" y1="148" x2="660" y2="185"/>
+
+    <!-- terminal 2 -> GND -->
+    <line x1="900" y1="610" x2="820" y2="610"/>
+    <line x1="820" y1="610" x2="820" y2="620"/>
+
+    <!-- inside the W48: earpiece across F / F' -->
+    <line x1="900" y1="320" x2="960" y2="320"/>
+    <line x1="960" y1="320" x2="960" y2="340"/>
+    <rect x="953" y="340" width="14" height="30" fill="#fff"/>
+    <path d="M967 340 L984 328 L984 382 L967 370" fill="#fff"/>
+    <line x1="960" y1="370" x2="960" y2="390"/>
+    <line x1="960" y1="390" x2="900" y2="390"/>
+
+    <!-- dial contact nsi between 1 and 2 (closed at rest) -->
+    <line x1="900" y1="510" x2="940" y2="510"/>
+    <line x1="944" y1="510" x2="988" y2="510"/>
+    <line x1="992" y1="510" x2="1040" y2="510"/>
+    <!-- hook switch between b and 2 (open while on the cradle) -->
+    <line x1="900" y1="570" x2="940" y2="570"/>
+    <line x1="944" y1="570" x2="984" y2="554"/>
+    <line x1="992" y1="570" x2="1040" y2="570"/>
+    <!-- common terminal 2 -->
+    <line x1="1040" y1="510" x2="1040" y2="610"/>
+    <line x1="1040" y1="610" x2="900" y2="610"/>
+
+    <!-- phone cable -->
+    <line x1="860" y1="300" x2="860" y2="640" stroke="#888" stroke-dasharray="6 5"/>
+  </g>
+
+  <!-- rheostat arrow across RV1 -->
+  <g stroke="#222" stroke-width="1.6" fill="#222">
+    <line x1="676" y1="336" x2="728" y2="306"/>
+    <path d="M734 302 L723 304 L728 312 Z"/>
+  </g>
+
+  <!-- contacts and junctions -->
+  <g fill="#fff" stroke="#222" stroke-width="2">
+    <circle cx="942" cy="510" r="3"/><circle cx="990" cy="510" r="3"/>
+    <circle cx="942" cy="570" r="3"/><circle cx="990" cy="570" r="3"/>
+  </g>
+  <g fill="#222">
+    <circle cx="780" cy="510" r="4"/>
+    <circle cx="1040" cy="570" r="4"/>
+  </g>
+
+  <!-- power symbols -->
+  <use href="#vcc" x="170" y="80"/>
+  <use href="#gnd" x="170" y="640"/>
+  <use href="#vcc" x="580" y="90"/>
+  <use href="#gnd" x="580" y="225"/>
+  <use href="#vcc" x="580" y="280"/>
+  <use href="#gnd" x="580" y="440"/>
+  <use href="#vcc" x="660" y="110"/>
+  <use href="#gnd" x="660" y="185"/>
+  <use href="#vcc" x="780" y="450"/>
+  <use href="#gnd" x="820" y="620"/>
+
+  <!-- ESP labels -->
+  <g fill="#111">
+    <text x="74" y="290" font-weight="bold" font-size="15">ESP32-S3</text>
+    <text x="74" y="308" font-size="12" fill="#555">YD-ESP32-S3 board</text>
+    <text x="74" y="440" font-size="12" fill="#555">power + flashing:</text>
+    <text x="74" y="456" font-size="12" fill="#555">USB-C socket "USB"</text>
+    <g text-anchor="end">
+      <text x="272" y="114">GPIO18</text>
+      <text x="272" y="144">GPIO16</text>
+      <text x="272" y="174">GPIO17</text>
+      <text x="272" y="204">GPIO10</text>
+      <text x="272" y="304">GPIO13</text>
+      <text x="272" y="334">GPIO14</text>
+      <text x="272" y="364">GPIO12</text>
+      <text x="272" y="394">GPIO15</text>
+      <text x="272" y="514">GPIO4</text>
+      <text x="272" y="574">GPIO5</text>
+    </g>
+    <text x="170" y="632" text-anchor="middle">GND</text>
+    <text x="170" y="98" text-anchor="middle">3V3</text>
+  </g>
+
+  <!-- wire names -->
+  <g fill="#1f4e9a" font-size="11" text-anchor="middle">
+    <text x="360" y="105">SCK</text>
+    <text x="360" y="135">MISO</text>
+    <text x="360" y="165">MOSI</text>
+    <text x="360" y="195">CS</text>
+    <text x="360" y="295">BCLK</text>
+    <text x="360" y="325">LRC</text>
+    <text x="360" y="355">DIN</text>
+    <text x="360" y="385">amp on</text>
+    <text x="360" y="505">dial pulses</text>
+    <text x="360" y="565">hook (internal pull-up)</text>
+  </g>
+
+  <!-- microSD labels -->
+  <g fill="#111">
+    <text x="448" y="114">CLK</text>
+    <text x="448" y="144">SO</text>
+    <text x="448" y="174">SI</text>
+    <text x="448" y="204">CS</text>
+    <text x="592" y="108" text-anchor="end">3V</text>
+    <text x="592" y="218" text-anchor="end">GND</text>
+    <text x="440" y="244" font-weight="bold">microSD breakout</text>
+    <text x="440" y="258" font-size="11" fill="#555">DET, D1, DAT2 unused</text>
+  </g>
+
+  <!-- amp labels -->
+  <g fill="#111">
+    <text x="448" y="304">BCLK</text>
+    <text x="448" y="334">LRC</text>
+    <text x="448" y="364">DIN</text>
+    <text x="448" y="394">SD</text>
+    <text x="448" y="424">GAIN</text>
+    <text x="580" y="298" text-anchor="middle" font-size="11">VIN</text>
+    <text x="580" y="432" text-anchor="middle" font-size="11">GND</text>
+    <text x="592" y="324" text-anchor="end">+</text>
+    <text x="592" y="394" text-anchor="end">−</text>
+    <text x="440" y="458" font-weight="bold">MAX98357A I2S amp</text>
+    <text x="440" y="472" font-size="11" fill="#555">GAIN open = 9 dB</text>
+  </g>
+
+  <!-- passives -->
+  <g fill="#111" font-size="12">
+    <text x="682" y="300" font-weight="bold">RV1 2 kΩ</text>
+    <text x="682" y="350" fill="#555" font-size="11">volume trimmer</text>
+    <text x="645" y="138" font-size="11">+</text>
+    <text x="680" y="146" font-weight="bold">C1 100 µF</text>
+    <text x="680" y="161" fill="#555" font-size="11">under the SD reader</text>
+    <text x="794" y="474" font-weight="bold">R1 1 kΩ</text>
+    <text x="794" y="489" fill="#555" font-size="11">pull-up</text>
+  </g>
+
+  <!-- phone cable -->
+  <g fill="#666" font-size="11" text-anchor="middle">
+    <text x="860" y="276">phone cable</text>
+    <text x="860" y="290">(modular jack)</text>
+  </g>
+
+  <!-- W48 labels -->
+  <g fill="#111">
+    <text x="990" y="300" text-anchor="middle" font-weight="bold" font-size="15">W48 telephone</text>
+    <g font-weight="bold" font-size="12" fill="#7a3e00">
+      <text x="906" y="314">F</text>
+      <text x="906" y="384">F′</text>
+      <text x="906" y="504">1</text>
+      <text x="906" y="564">b</text>
+      <text x="906" y="604">2</text>
+    </g>
+    <text x="992" y="360" font-size="11" fill="#555">earpiece</text>
+    <text x="930" y="496" font-size="11" fill="#555">dial contact nsi</text>
+    <text x="930" y="528" font-size="11" fill="#555">(opens per pulse)</text>
+    <text x="1000" y="552" font-size="11" fill="#555">hook</text>
+    <text x="930" y="590" font-size="11" fill="#555">closes when lifted</text>
+  </g>
+
+  <text x="60" y="676" font-size="11" fill="#777">Pin numbers from include/config.h. The board's onboard RGB LED is not shown. Letters on the W48 are its terminal strip labels.</text>
+</svg>
